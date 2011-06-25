@@ -10,7 +10,7 @@ module ApplicationHelper
   end
   
   def facebook_like
-    content_tag :iframe, nil, :src => "http://www.facebook.com/plugins/like.php?app_id=182129078509067&amp;href=#{CGI::escape(request.url)}&send=false&layout=button_count&width=450&show_faces=true&action=like&colorscheme=light&font=verdana&height=21", :scrolling => 'no', :frameborder => '0', :allowtransparency => true, :class => 'iframe-f'
+    content_tag :iframe, nil, :src => "http://www.facebook.com/plugins/like.php?href=#{CGI::escape(request.url)}&send=false&layout=button_count&width=450&show_faces=true&action=like&colorscheme=light&font=verdana&height=21", :scrolling => 'no', :frameborder => '0', :allowtransparency => true, :class => 'iframe-f'
   end
         
   def clear
