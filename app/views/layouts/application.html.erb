@@ -1,14 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BlogHtml</title>
+  <meta property="og:title" content="NicosBlog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://nicosblog.heroku.com" />
+  <meta property="og:image" content="http://nicosblog.heroku.com/images/logo.png" />
+  <meta property="og:site_name" content="NicosBlog" />
+  <meta property="fb:admins" content="1003218257" />
+  
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <title><%= title %></title>
+  
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  
+  <%= javascript_include_tag :defaults, "jquery.md5.js", "jquery.easing.1.3.js", "script.js", "https://apis.google.com/js/plusone.js", "http://platform.twitter.com/widgets.js" %>
+  
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <div id="main">
+    <div class="container">
+      <%= render :partial => 'shared/header' %>
 
-<%= yield %>
+      <div id="block_content">
+        <div id="content_area" class="block">
+          <div class="block_inside">
+            <h4><a href="tags">Services</a></h4>
+          	<h2>Branding</h2>
+        	  <%= render :partial => 'shared/social' %>
+   
+            <hr/>
+            <br/>
+          	<!-- <div id="article_info">
+               <hr/>
+                <p>Escrito por <span class="author">NicosKaralis</span>, às 13:02 - 20 de junho de 2011</p>
+                <a href="#coments_area">10 Comentarios</a>
+               <hr/><br />
+              </div> #article_info -->
+              
+            <%= yield %>
+            
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla mi risus, tempor in, gravida quis, rutrum vitae, massa. Suspendisse congue, nibh et lacinia sodales. </p>
+      			<p>Risus nulla fringilla enim, sit amet adipiscing sapien risus sed velit. Sed vitae justo. In quis lorem nec justo varius sodales. Nullam eleifend accumsan mi. Nunc at velit. Maecenas velit. </p>
+      			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla mi risus, tempor in, gravida quis, rutrum vitae, massa. Suspendisse congue, nibh et lacinia sodales. </p>
+      			<p>Risus nulla fringilla enim, sit amet adipiscing sapien risus sed velit. Sed vitae justo. In quis lorem nec justo varius sodales. Nullam eleifend accumsan mi. Nunc at velit. Maecenas velit. </p>
+      			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+      	</div>
+      	<%= render :partial => 'shared/comments' %>
+      </div>
+      
+      <%= render :partial => 'shared/sidebar' %>
+      <%= clear %>
+    </div>
+  </div><!-- #main -->
 
+  <%= render :partial => 'shared/footer' %>
+  <%= render :partial => 'shared/propaganda' %>
+
+  <a href="#" id="back_top">Back</a>
 </body>
 </html>

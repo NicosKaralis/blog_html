@@ -1,4 +1,10 @@
 BlogHtml::Application.routes.draw do
+
+  match '/about' => 'page#about'
+  match '/contact' => 'page#contact'
+  
+  root :to => 'page#home'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
